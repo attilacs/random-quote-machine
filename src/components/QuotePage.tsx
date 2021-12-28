@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import AppStyled from "../styles/AppStyled";
+import QuoteBox from "./QuoteBox";
 
 const QuotePageStyled = styled.div`
   align-items: center;
@@ -12,6 +13,7 @@ const QuotePage = () => {
   return (
     <QuotePageStyled>
       <AppStyled />
+      <QuoteBox />
     </QuotePageStyled>
   );
 };
