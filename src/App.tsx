@@ -1,5 +1,7 @@
+import QuotePage from "./components/QuotePage";
+
 const App = () => {
-  return <></>;
+  return <QuotePage />;
 };
 
 export default App;
