@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+const Author = styled.span`
+  margin-bottom: 20px;
+  text-align: right;
+`;
+
 const QuoteContainer = styled.div`
   border-radius: 3px;
   display: flex;
@@ -18,6 +23,7 @@ const QuoteBox = () => {
   return (
     <QuoteContainer id="quote-box" data-test="quote-box">
       <Text id="text" data-test="text"></Text>
+      <Author id="author" data-test="author"></Author>
     </QuoteContainer>
   );
 };
