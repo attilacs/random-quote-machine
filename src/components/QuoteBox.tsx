@@ -1,14 +1,7 @@
 import styled from "styled-components";
 import Author from "../styles/Author";
+import QuoteContainer from "../styles/QuoteContainer";
 import { Quote } from "../types/Quote";
-
-const QuoteContainer = styled.div`
-  border-radius: 3px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  width: 450px;
-`;
 
 const Text = styled.div`
   font-size: 28px;
