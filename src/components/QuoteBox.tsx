@@ -1,10 +1,6 @@
 import styled from "styled-components";
+import Author from "../styles/Author";
 import { Quote } from "../types/Quote";
-
-const Author = styled.span`
-  margin-bottom: 20px;
-  text-align: right;
-`;
 
 const QuoteContainer = styled.div`
   border-radius: 3px;
