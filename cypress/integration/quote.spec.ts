@@ -22,7 +22,19 @@ describe("Display quotes", () => {
 
   it('should display the text "Loading..." while downloading the quotes', () => {
     cy.contains("Loading...");
-});
+  });
+
+  it("should contain the quote text and author", () => {
+    cy.get("div[data-test=text]").then((text) => {
+      if (text.text() === "Text of the first test quote.") {
+        cy.get("span[data-test=author]").contains("First Test Author");
+      } else if (text.text() === "Text of the second test quote.") {
+        cy.get("span[data-test=author]").contains("Second Test Author");
+      } else {
+        throw new Error("Text doesn't contains the right quote");
+      }
+    });
+  });
 
   it("should show error message on failed dowload attempt", () => {
     cy.intercept(
@@ -34,5 +46,5 @@ describe("Display quotes", () => {
     );
     cy.wait(3500);
     cy.contains("An error occurred...");
-});
+  });
 });
