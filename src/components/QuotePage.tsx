@@ -38,7 +38,7 @@ const QuotePage = () => {
   return (
     <QuotePageStyled>
       <AppStyled />
-      <QuoteBox />
+      <QuoteBox selectedQuote={randomQuote} />
     </QuotePageStyled>
   );
 };

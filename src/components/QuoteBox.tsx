@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Quote } from "../types/Quote";
 
 const Author = styled.span`
   margin-bottom: 20px;
@@ -19,11 +20,20 @@ const Text = styled.div`
   text-align: center;
 `;
 
-const QuoteBox = () => {
+interface QuoteBoxParams {
+  selectedQuote: Quote;
+}
+
+const QuoteBox = ({ selectedQuote }: QuoteBoxParams) => {
+  const { quote, author } = selectedQuote;
   return (
     <QuoteContainer id="quote-box" data-test="quote-box">
-      <Text id="text" data-test="text"></Text>
-      <Author id="author" data-test="author"></Author>
+      <Text id="text" data-test="text">
+        {quote}
+      </Text>
+      <Author id="author" data-test="author">
+        {author}
+      </Author>
     </QuoteContainer>
   );
 };
