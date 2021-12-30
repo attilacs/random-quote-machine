@@ -24,3 +24,12 @@ export const getRandomQuote = (currentQuote: Quote, quotes: Quote[]) => {
   }
   return randomQuote;
 };
+
+export const getTwitterHref = (quote: string, author: string) => {
+  const twitterUrl =
+    "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=";
+
+  return `${twitterUrl}${encodeURIComponent(
+    '"' + quote + '" '
+  )}${encodeURIComponent(author)}`;
+};
