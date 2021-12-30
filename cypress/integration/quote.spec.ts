@@ -25,6 +25,7 @@ describe("Display quotes", () => {
   });
 
   it("should contain the quote text and author", () => {
+    cy.wait(100);
     cy.get("div[data-test=text]").then((text) => {
       if (text.text() === "Text of the first test quote.") {
         cy.get("span[data-test=author]").contains("First Test Author");
