@@ -1,0 +1,12 @@
+{
+  "quotes": [
+    {
+      "quote": "Text of the first test quote.",
+      "author": "First Test Author"
+    },
+    {
+      "quote": "Text of the second test quote.",
+      "author": "Second Test Author"
+    }
+  ]
+}
