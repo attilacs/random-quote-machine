@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import styled from "styled-components";
 import AppStyled from "../styles/AppStyled";
+import QuotePageStyled from "../styles/QuotePage";
 import { Quote } from "../types/Quote";
 import QuoteBox from "./QuoteBox";
 import { fetchQuotes, getRandomQuote } from "./Service";
-
-const QuotePageStyled = styled.div`
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-`;
 
 const QuotePage = () => {
   const quotesQuery = useQuery("quotes", () => fetchQuotes());
