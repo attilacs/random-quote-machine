@@ -27,6 +27,10 @@ const QuotePage = () => {
     }
   }, [quotes]);
 
+  if (isLoading || isIdle) {
+    return <>Loading...</>;
+  }
+
   return (
     <QuotePageStyled>
       <AppStyled />
