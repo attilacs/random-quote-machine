@@ -1,13 +1,7 @@
-import styled from "styled-components";
 import Author from "../styles/Author";
+import Text from "../styles/Text";
 import QuoteContainer from "../styles/QuoteContainer";
 import { Quote } from "../types/Quote";
-
-const Text = styled.div`
-  font-size: 28px;
-  margin-bottom: 20px;
-  text-align: center;
-`;
 
 interface QuoteBoxParams {
   selectedQuote: Quote;
