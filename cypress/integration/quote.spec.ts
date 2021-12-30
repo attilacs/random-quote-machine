@@ -19,4 +19,9 @@ describe("Display quotes", () => {
     cy.get("span[data-test=author]");
     cy.get("#author");
   });
+
+  it('should display the text "Loading..." while downloading the quotes', () => {
+    cy.contains("Loading...");
+});
+
 });
