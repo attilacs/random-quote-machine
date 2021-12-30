@@ -31,6 +31,10 @@ const QuotePage = () => {
     return <>Loading...</>;
   }
 
+  if (isError) {
+    return <>An error occurred...</>;
+  }
+
   return (
     <QuotePageStyled>
       <AppStyled />
