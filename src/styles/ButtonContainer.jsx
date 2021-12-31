@@ -4,3 +4,8 @@ export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+export const ShareButtonContainer = styled.div`
+  display: flex;
+  gap: 5px;
+`;
