@@ -24,6 +24,13 @@ describe("Display quotes", () => {
     cy.contains("Loading...");
   });
 
+  it('should display an anchor element with id="tweet-quote" within #quote-box', () => {
+    cy.get("div[data-test=quote-box]");
+    cy.get("a#tweet-quote")
+      .and("have.attr", "href")
+      .and("match", /twitter.com\/intent\/tweet/);
+  });
+
   it("should contain the quote text and author", () => {
     cy.wait(100);
     cy.get("div[data-test=text]").then((text) => {
