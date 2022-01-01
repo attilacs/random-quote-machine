@@ -9,15 +9,17 @@ describe("Display quotes", () => {
   });
 
   it('should contain an element with id="text" within #quote-box', () => {
-    cy.get("div[data-test=quote-box]");
-    cy.get("div[data-test=text]");
-    cy.get("#text");
+    cy.get("div[data-test=quote-box]").within(() => {
+      cy.get("div[data-test=text]");
+      cy.get("#text");
+    });
   });
 
   it('should contain an element with id="author" within #quote-box', () => {
-    cy.get("div[data-test=quote-box]");
-    cy.get("span[data-test=author]");
-    cy.get("#author");
+    cy.get("div[data-test=quote-box]").within(() => {
+      cy.get("span[data-test=author]");
+      cy.get("#author");
+    });
   });
 
   it('should display the text "Loading..." while downloading the quotes', () => {
@@ -25,11 +27,12 @@ describe("Display quotes", () => {
   });
 
   it('should display an anchor element with id="tweet-quote" within #quote-box', () => {
-    cy.get("div[data-test=quote-box]");
-    cy.get("a[data-test=tweet-quote]");
-    cy.get("a#tweet-quote")
-      .and("have.attr", "href")
-      .and("match", /twitter.com\/intent\/tweet/);
+    cy.get("div[data-test=quote-box]").within(() => {
+      cy.get("a[data-test=tweet-quote]");
+      cy.get("a#tweet-quote")
+        .and("have.attr", "href")
+        .and("match", /twitter.com\/intent\/tweet/);
+    });
   });
 
   it("should contain the quote text and author", () => {
