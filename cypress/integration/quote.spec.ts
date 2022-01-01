@@ -48,6 +48,28 @@ describe("Display quotes", () => {
     });
   });
 
+  it('should display an element with id="new-quote" within #quote-box', () => {
+    cy.get("div[data-test=quote-box]").within(() => {
+      cy.get("div[data-test=text]").then((text) => {
+        const quoteText = text.text();
+        cy.get("#new-quote");
+        cy.get("a[data-test=new-quote]").click();
+        cy.get("div[data-test=text]").should((text) => {
+          expect(text.text()).not.to.eq(quoteText);
+        });
+      });
+
+      cy.get("span[data-test=author]").then((author) => {
+        const quoteAuthor = author.text();
+        cy.get("#new-quote");
+        cy.get("a[data-test=new-quote]").click();
+        cy.get("span[data-test=author]").should((author) => {
+          expect(author.text()).not.to.eq(quoteAuthor);
+        });
+      });
+    });
+  });
+
   it("should show error message on failed dowload attempt", () => {
     cy.intercept(
       "GET",
