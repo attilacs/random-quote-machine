@@ -26,6 +26,7 @@ describe("Display quotes", () => {
 
   it('should display an anchor element with id="tweet-quote" within #quote-box', () => {
     cy.get("div[data-test=quote-box]");
+    cy.get("a[data-test=tweet-quote]");
     cy.get("a#tweet-quote")
       .and("have.attr", "href")
       .and("match", /twitter.com\/intent\/tweet/);

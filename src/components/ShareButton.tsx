@@ -10,7 +10,7 @@ interface ShareButtonProps {
 
 const ShareButton = ({ id, children, href }: ShareButtonProps) => {
   return (
-    <ButtonStyled id={id} href={href} target="_blank">
+    <ButtonStyled id={id} href={href} target="_blank" data-test={id}>
       {children}
     </ButtonStyled>
   );
