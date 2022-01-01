@@ -9,12 +9,21 @@ import {
 import ShareButton from "./ShareButton";
 import { Twitter } from "@styled-icons/boxicons-logos";
 import { getTwitterHref } from "./Service";
+import NewQuoteButton from "./NewQuoteButton";
 
 interface QuoteBoxParams {
   selectedQuote: Quote;
+  setRandomQuote: React.Dispatch<React.SetStateAction<Quote>>;
+  randomQuote: Quote;
+  quotes: Quote[];
 }
 
-const QuoteBox = ({ selectedQuote }: QuoteBoxParams) => {
+const QuoteBox = ({
+  selectedQuote,
+  setRandomQuote,
+  randomQuote,
+  quotes
+}: QuoteBoxParams) => {
   const { quote, author } = selectedQuote;
   const twitterHref = getTwitterHref(quote, author);
 
@@ -32,6 +41,11 @@ const QuoteBox = ({ selectedQuote }: QuoteBoxParams) => {
             <Twitter size="28" />
           </ShareButton>
         </ShareButtonContainer>
+        <NewQuoteButton
+          setRandomQuote={setRandomQuote}
+          randomQuote={randomQuote}
+          quotes={quotes}
+        />
       </ButtonContainer>
     </QuoteContainer>
   );

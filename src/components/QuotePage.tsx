@@ -31,7 +31,12 @@ const QuotePage = () => {
   return (
     <QuotePageStyled>
       <AppStyled />
-      <QuoteBox selectedQuote={randomQuote} />
+      <QuoteBox
+        selectedQuote={randomQuote}
+        setRandomQuote={setRandomQuote}
+        randomQuote={randomQuote}
+        quotes={quotes}
+      />
     </QuotePageStyled>
   );
 };
