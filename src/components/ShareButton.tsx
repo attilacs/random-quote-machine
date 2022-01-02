@@ -6,11 +6,18 @@ interface ShareButtonProps {
   id: string;
   children: ReactElement<StyledIcon>;
   href: string;
+  color: string;
 }
 
-const ShareButton = ({ id, children, href }: ShareButtonProps) => {
+const ShareButton = ({ id, children, href, color }: ShareButtonProps) => {
   return (
-    <ButtonStyled id={id} href={href} target="_blank" data-test={id}>
+    <ButtonStyled
+      id={id}
+      href={href}
+      target="_blank"
+      data-test={id}
+      theme={{ color: color }}
+    >
       {children}
     </ButtonStyled>
   );

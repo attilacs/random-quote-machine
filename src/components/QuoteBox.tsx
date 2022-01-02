@@ -41,7 +41,7 @@ const QuoteBox = ({
       </Author>
       <ButtonContainer>
         <ShareButtonContainer>
-          <ShareButton id="tweet-quote" href={twitterHref}>
+            <ShareButton id="tweet-quote" href={twitterHref} color={color}>
             <Twitter size="28" />
           </ShareButton>
         </ShareButtonContainer>
