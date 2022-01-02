@@ -33,7 +33,7 @@ const QuoteBox = ({
 
   return (
     <QuoteContainer id="quote-box" data-test="quote-box">
-      <Text id="text" data-test="text">
+        <Text id="text" data-test="text" theme={{ color: color }}>
         {quote}
       </Text>
       <Author id="author" data-test="author">
