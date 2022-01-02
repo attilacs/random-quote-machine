@@ -6,19 +6,26 @@ interface NewQuoteParams {
   setRandomQuote: React.Dispatch<React.SetStateAction<Quote>>;
   randomQuote: Quote;
   quotes: Quote[];
+  setRandomColors: Function;
 }
 
 const NewQuoteButton = ({
   setRandomQuote,
   randomQuote,
-  quotes
+  quotes,
+  setRandomColors,
 }: NewQuoteParams) => {
   const newQuote = () => {
     setRandomQuote(getRandomQuote(randomQuote, quotes));
+    setRandomColors();
   };
 
   return (
-    <ButtonStyled id="new-quote" data-test="new-quote" onClick={newQuote}>
+    <ButtonStyled
+      id="new-quote"
+      data-test="new-quote"
+      onClick={newQuote}
+    >
       New quote
     </ButtonStyled>
   );

@@ -51,6 +51,7 @@ const QuotePage = () => {
         setRandomQuote={setRandomQuote}
         randomQuote={randomQuote}
         quotes={quotes}
+        setRandomColors={setRandomColors}
       />
     </QuotePageStyled>
   );

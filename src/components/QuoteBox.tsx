@@ -16,13 +16,15 @@ interface QuoteBoxParams {
   setRandomQuote: React.Dispatch<React.SetStateAction<Quote>>;
   randomQuote: Quote;
   quotes: Quote[];
+  setRandomColors: Function;
 }
 
 const QuoteBox = ({
   selectedQuote,
   setRandomQuote,
   randomQuote,
-  quotes
+  quotes,
+  setRandomColors,
 }: QuoteBoxParams) => {
   const { quote, author } = selectedQuote;
   const twitterHref = getTwitterHref(quote, author);
@@ -45,6 +47,7 @@ const QuoteBox = ({
           setRandomQuote={setRandomQuote}
           randomQuote={randomQuote}
           quotes={quotes}
+            setRandomColors={setRandomColors}
         />
       </ButtonContainer>
     </QuoteContainer>
