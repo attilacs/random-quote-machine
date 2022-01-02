@@ -4,7 +4,12 @@ import AppStyled from "../styles/AppStyled";
 import QuotePageStyled from "../styles/QuotePage";
 import { Quote } from "../types/Quote";
 import QuoteBox from "./QuoteBox";
-import { fetchQuotes, getRandomQuote } from "./Service";
+import {
+  fetchQuotes,
+  getHslString,
+  getRandomHslValues,
+  getRandomQuote
+} from "./Service";
 
 const QuotePage = () => {
   const quotesQuery = useQuery("quotes", () => fetchQuotes());
@@ -13,10 +18,20 @@ const QuotePage = () => {
     quote: "",
     author: ""
   });
+  const [color1, setColor1] = useState("");
+  const [color2, setColor2] = useState("");
+
+  const setRandomColors = () => {
+    const hsl1 = getRandomHslValues();
+    const hsl2 = getRandomHslValues();
+    setColor1(getHslString(hsl1.h, hsl1.s, hsl1.l));
+    setColor2(getHslString(hsl2.h, hsl2.s, hsl2.l));
+  };
 
   useEffect(() => {
     if (quotes) {
       setRandomQuote(getRandomQuote(randomQuote, quotes));
+      setRandomColors();
     }
   }, [quotes]);
 
