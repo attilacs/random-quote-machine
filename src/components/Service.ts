@@ -33,3 +33,14 @@ export const getTwitterHref = (quote: string, author: string) => {
     '"' + quote + '" '
   )}${encodeURIComponent(author)}`;
 };
+
+export const getRandomHslValues = () => {
+  const h = getRandomInt(0, 361);
+  const s = 100;
+  const l = getRandomInt(35, 51);
+  return { h, s, l };
+};
+
+export const getHslString = (h: number, s: number, l: number) => {
+  return `hsl(${h}, ${s}%, ${l}%)`;
+};
