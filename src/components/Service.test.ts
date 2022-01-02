@@ -1,4 +1,10 @@
-import { getRandomInt, getRandomQuote, getTwitterHref } from "./Service";
+import {
+  getHslString,
+  getRandomHslValues,
+  getRandomInt,
+  getRandomQuote,
+  getTwitterHref
+} from "./Service";
 
 describe("Random number generator", () => {
   test("should return 0", () => {
@@ -49,5 +55,27 @@ describe("Share quote link generator", () => {
   test("should generate a new tweet url", () => {
     expect(getTwitterHref(quote, author)).toBe(twitterHref);
     expect(getTwitterHref(quote2, author2)).toBe(twitterHref2);
+  });
+});
+
+describe("Random color generator", () => {
+  const { h, s, l } = getRandomHslValues();
+
+  test("should return h value between 0 and 360", () => {
+    expect(h).toBeGreaterThanOrEqual(0);
+    expect(h).toBeLessThanOrEqual(360);
+  });
+
+  test("should return s value equal to 100", () => {
+    expect(s).toBe(100);
+  });
+
+  test("should return l value between 35 and 50", () => {
+    expect(l).toBeGreaterThanOrEqual(35);
+    expect(l).toBeLessThanOrEqual(50);
+  });
+
+  test("should return hsl string", () => {
+    expect(getHslString(140, 100, 45)).toBe("hsl(140, 100%, 45%)");
   });
 });
