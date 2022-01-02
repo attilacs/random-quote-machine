@@ -17,6 +17,7 @@ interface QuoteBoxParams {
   randomQuote: Quote;
   quotes: Quote[];
   setRandomColors: Function;
+  color: string;
 }
 
 const QuoteBox = ({
@@ -25,6 +26,7 @@ const QuoteBox = ({
   randomQuote,
   quotes,
   setRandomColors,
+  color
 }: QuoteBoxParams) => {
   const { quote, author } = selectedQuote;
   const twitterHref = getTwitterHref(quote, author);
@@ -48,6 +50,7 @@ const QuoteBox = ({
           randomQuote={randomQuote}
           quotes={quotes}
             setRandomColors={setRandomColors}
+            color={color}
         />
       </ButtonContainer>
     </QuoteContainer>

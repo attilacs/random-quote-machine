@@ -7,6 +7,7 @@ interface NewQuoteParams {
   randomQuote: Quote;
   quotes: Quote[];
   setRandomColors: Function;
+  color: string;
 }
 
 const NewQuoteButton = ({
@@ -14,6 +15,7 @@ const NewQuoteButton = ({
   randomQuote,
   quotes,
   setRandomColors,
+  color
 }: NewQuoteParams) => {
   const newQuote = () => {
     setRandomQuote(getRandomQuote(randomQuote, quotes));
@@ -25,6 +27,7 @@ const NewQuoteButton = ({
       id="new-quote"
       data-test="new-quote"
       onClick={newQuote}
+      theme={{ color: color }}
     >
       New quote
     </ButtonStyled>
