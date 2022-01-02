@@ -36,7 +36,7 @@ const QuoteBox = ({
         <Text id="text" data-test="text" theme={{ color: color }}>
         {quote}
       </Text>
-      <Author id="author" data-test="author">
+        <Author id="author" data-test="author" theme={{ color: color }}>
         {author}
       </Author>
       <ButtonContainer>
