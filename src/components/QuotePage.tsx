@@ -44,7 +44,7 @@ const QuotePage = () => {
   }
 
   return (
-    <QuotePageStyled>
+    <QuotePageStyled theme={{ color1: color1, color2: color2 }}>
       <AppStyled />
       <QuoteBox
         selectedQuote={randomQuote}
