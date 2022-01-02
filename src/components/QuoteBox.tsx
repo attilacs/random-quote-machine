@@ -10,6 +10,7 @@ import ShareButton from "./ShareButton";
 import { Twitter } from "@styled-icons/boxicons-logos";
 import { getTwitterHref } from "./Service";
 import NewQuoteButton from "./NewQuoteButton";
+import GithubLink from "./GithubLink";
 
 interface QuoteBoxParams {
   selectedQuote: Quote;
@@ -32,28 +33,31 @@ const QuoteBox = ({
   const twitterHref = getTwitterHref(quote, author);
 
   return (
-    <QuoteContainer id="quote-box" data-test="quote-box">
+    <>
+      <QuoteContainer id="quote-box" data-test="quote-box">
         <Text id="text" data-test="text" theme={{ color: color }}>
-        {quote}
-      </Text>
+          {quote}
+        </Text>
         <Author id="author" data-test="author" theme={{ color: color }}>
-        {author}
-      </Author>
-      <ButtonContainer>
-        <ShareButtonContainer>
+          {author}
+        </Author>
+        <ButtonContainer>
+          <ShareButtonContainer>
             <ShareButton id="tweet-quote" href={twitterHref} color={color}>
-            <Twitter size="28" />
-          </ShareButton>
-        </ShareButtonContainer>
-        <NewQuoteButton
-          setRandomQuote={setRandomQuote}
-          randomQuote={randomQuote}
-          quotes={quotes}
+              <Twitter size="28" />
+            </ShareButton>
+          </ShareButtonContainer>
+          <NewQuoteButton
+            setRandomQuote={setRandomQuote}
+            randomQuote={randomQuote}
+            quotes={quotes}
             setRandomColors={setRandomColors}
             color={color}
-        />
-      </ButtonContainer>
-    </QuoteContainer>
+          />
+        </ButtonContainer>
+      </QuoteContainer>
+      <GithubLink />
+    </>
   );
 };
 
