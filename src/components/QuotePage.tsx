@@ -23,6 +23,9 @@ const QuotePage = () => {
 
   const setRandomColors = () => {
     const hsl1 = getRandomHslValues();
+    if (30 <= hsl1.h && hsl1.h <= 190) {
+      hsl1.l = 30;
+    }
     const hsl2 = getRandomHslValues();
     setColor1(getHslString(hsl1.h, hsl1.s, hsl1.l));
     setColor2(getHslString(hsl2.h, hsl2.s, hsl2.l));
